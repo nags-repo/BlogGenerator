@@ -97,5 +97,11 @@
   },
   "cli": {
     "analytics": "51866482-aed6-49b0-8199-d7b6abd8f993"
+  },
+  "build": {
+  "options": {
+    "baseHref": "/BlogGenerator/"
   }
+}
+
 }
