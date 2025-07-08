@@ -1,0 +1,132 @@
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()" #jobForm="ngForm" class="job-form">
+
+    <div class="form-row">
+      <label for="companyName">Company Name:</label>
+      <input
+        type="text"
+        id="companyName"
+        name="companyName"
+        [(ngModel)]="job.companyName"
+        required
+      />
+    </div>
+
+    <div class="form-row">
+      <label for="jobProfile">Job Profile:</label>
+      <input
+        type="text"
+        id="jobProfile"
+        name="jobProfile"
+        [(ngModel)]="job.jobProfile"
+        required
+      />
+    </div>
+
+    <div class="form-row">
+      <label for="experience">Experience:</label>
+      <select
+        id="experience"
+        name="experience"
+        [(ngModel)]="job.experience"
+        required
+      >
+        <option value="" disabled selected>Select experience</option>
+        <option value="Freshers">Freshers</option>
+        <option value="Experienced">Experienced</option>
+        <option value="Freshers/Experienced">Freshers/Experienced</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="location">Location:</label>
+      <input
+        type="text"
+        id="location"
+        name="location"
+        disabled="{{ job.remote }}"
+        placeholder="Enter location (leave empty for remote)"
+        [(ngModel)]="job.location"
+        required
+      />
+      <input
+        type="checkbox"
+        id="remote"
+        name="remote"
+        onclick="this.location = 'Work from home'"
+        [(ngModel)]="job.remote"
+      />
+    </div>
+
+    <div class="form-row">
+      <label for="qualification">Qualification:</label>
+      <input
+        type="text"
+        id="qualification"
+        name="qualification"
+        [(ngModel)]="job.qualification"
+        required
+      />
+    </div>
+
+    <div class="form-row">
+      <label for="salary">Salary:</label>
+      <input
+        type="text"
+        id="salary"
+        name="salary"
+        [(ngModel)]="job.salary"
+      />
+    </div>
+
+    <div class="form-row">
+      <label for="website">Website:</label>
+      <input
+        type="url"
+        id="website"
+        name="website"
+        [(ngModel)]="job.website"
+      />
+    </div>
+    <div class="form-row">
+      <label for="jobApplyUrl">Job apply URL:</label>
+      <input
+        type="url"
+        id="jobApplyUrl"
+        name="jobApplyUrl"
+        [(ngModel)]="job.jobApplyUrl"
+      />
+    </div>
+    <div class="form-row">
+      <label for="eligible">Who is eligible?:</label>
+      <textarea
+        id="eligible"
+        name="eligible"
+        [(ngModel)]="job.eligible"
+        required
+        rows="10"
+      ></textarea>
+    </div>
+
+    <div class="form-row">
+      <label for="responsibilities">What are the responsibilities?:</label>
+      <textarea
+        id="responsibilities"
+        name="responsibilities"
+        [(ngModel)]="job.responsibilities"
+        required
+        rows="10"
+      ></textarea>
+    </div>
+
+    <div class="form-row submit-row">
+      <button type="submit" [disabled]="!jobForm.form.valid">Submit</button>
+    </div>
+    <button type="reset" (click)="onReset()">Reset</button>
+  </form>
+  <div>
+    <app-blog-display-page *ngIf="isSubmitted" [job]="job"></app-blog-display-page>
+    <app-linkedin-post-generator *ngIf="isSubmitted" [job]="job"></app-linkedin-post-generator>
+  </div>
+</div>
+

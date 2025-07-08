@@ -1,0 +1,44 @@
+.blog-output-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.blog-output-container label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.blog-textarea {
+  font-family: monospace;
+  font-size: 1rem;
+  padding: 12px;
+  height: 500px;
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  white-space: pre;
+}
+
+.copy-btn {
+  align-self: flex-start;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: #357abd;
+}

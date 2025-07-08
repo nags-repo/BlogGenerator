@@ -1,0 +1,108 @@
+/* Form container settings */
+.form-container {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fafafa;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Main form styling */
+.job-form {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* wider input area */
+  gap: 16px 24px;
+  max-width: 900px;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Label styling */
+.job-form label {
+  font-weight: 600;
+  font-size: 1rem;
+  align-self: center;
+  justify-self: start;
+}
+
+/* Inputs, selects, and textareas */
+.job-form input,
+.job-form select,
+.job-form textarea {
+  font-size: 1rem;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus states */
+.job-form input:focus,
+.job-form select:focus,
+.job-form textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Textareas resizable */
+.job-form textarea {
+  resize: both;
+}
+
+/* Submit button styling */
+.job-form button {
+  grid-column: 1 / -1;
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.job-form button:disabled {
+  background-color: #8ab3f8;
+  cursor: not-allowed;
+}
+
+.job-form button:hover:not(:disabled) {
+  background-color: #357abd;
+}
+
+/* Responsive: stack labels and inputs vertically */
+@media (max-width: 768px) {
+  .job-form {
+    grid-template-columns: 1fr;
+  }
+
+  .job-form label {
+    justify-self: start;
+  }
+
+  .job-form input,
+  .job-form select,
+  .job-form textarea {
+    justify-self: stretch;
+  }
+
+  .job-form button {
+    grid-column: 1;
+  }
+}
+
+/* Optional styling for blog output placeholder */
+.blog-output {
+  margin-top: 40px;
+  max-width: 900px;
+  width: 100%;
+}

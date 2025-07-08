@@ -1,0 +1,11 @@
+<div class="blog-output-container">
+  <label for="generatedBlog">Generated Blog HTML:</label>  <button class="copy-btn" (click)="copyToClipboard(blogTextArea)">Copy to Clipboard</button>
+  
+  <textarea
+    id="generatedBlog"
+    class="blog-textarea"
+    [value]="generatedBlogHtml"
+    readonly
+    #blogTextArea
+  ></textarea>
+</div>
